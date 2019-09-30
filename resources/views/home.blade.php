@@ -16,7 +16,7 @@
 
                     <h1>{{ $user->username }}</h1>
 
-                    You are logged in! jij wel toch
+                    You are logged in! jij wel toch ofniet
                 </div>
             </div>
         </div>
