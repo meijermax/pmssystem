@@ -19,9 +19,26 @@
                         {{ $user->profile->url ?? 'N/A' }}
 
                     <div>
-                        <a href="">test</a>
+                        {{ $user->post->count() }}
                     </div>
 
+                    <div class="div">
+                        <follow-button user-id="{{ $user->id }}"></follow-button>
+                    </div>
+
+                    <div>
+                        <a href="/posts/create">add new post</a>
+                    </div>
+
+                    <div class="pt-4 pb-4">
+                        @foreach($user->post as $post)
+
+                            <a href="/posts/{{ $post->id }}">
+                                <img src="/storage/{{ $post->image }}" class="img-fluid pb-4" />
+                            </a>
+
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

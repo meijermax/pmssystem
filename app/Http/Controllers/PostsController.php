@@ -32,9 +32,23 @@ class PostsController extends Controller
 //        $post->caption = $data['caption'];
 //        $post->save();
 //
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        auth()->user()->post()->create([
+            'caption' => $data['caption'],
+            'image' => $imagePath,
+        ]);
+
+        return redirect('/profile/' .auth()->user()->id);
+
 //        dd(request()->all());
 
-        auth()->user()->post()->create($data);
+    }
 
+    public function show(\App\Post $post)
+    {
+        return view('posts.show', compact('post'));
+//        dd($post);
     }
 }
