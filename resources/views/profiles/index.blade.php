@@ -23,11 +23,11 @@
                     </div>
 
                     <div class="div">
-                        <follow-button user-id="{{ $user->id }}"></follow-button>
+{{--                        <follow-button user-id="{{ $user->id }}"></follow-button>--}}
                     </div>
 
                     <div>
-                        <a href="/posts/create">add new post</a>
+                        <a href="{{route('posts.create')}}">add new project</a>
                     </div>
 
                     <div class="pt-4 pb-4">

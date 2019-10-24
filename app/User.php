@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Permissions\HasPermissionsTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -51,5 +52,9 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function role {
+        return $this->belongsToMany('App\Role');
     }
 }

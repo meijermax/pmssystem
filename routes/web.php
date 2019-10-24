@@ -13,7 +13,7 @@
 
 use App\Http\Controllers\FollowsController;
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
@@ -26,8 +26,9 @@ Route::post('follow/{user}', 'FollowsController@store');
 //});
 
 
+Route::get('/posts/create', 'PostsController@create')->name('posts.create');
 Route::get('/posts/{post}', 'PostsController@show');
-Route::get('/posts/create', 'PostsController@create');
+
 Route::post('/posts', 'PostsController@store');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
