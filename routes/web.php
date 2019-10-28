@@ -26,6 +26,13 @@ Route::post('follow/{user}', 'FollowsController@store');
 //});
 
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/dashboard', function(){
+    return 'Wellcome Admin!';
+})->name('admin.dashboard');
+
+
 Route::get('/posts/create', 'PostsController@create')->name('posts.create');
 Route::get('/posts/{post}', 'PostsController@show');
 

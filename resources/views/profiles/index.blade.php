@@ -27,15 +27,20 @@
                     </div>
 
                     <div>
+                        @role('writer')
                         <a href="{{route('posts.create')}}">add new project</a>
+                        @endrole
                     </div>
 
                     <div class="pt-4 pb-4">
                         @foreach($user->post as $post)
 
-                            <a href="/posts/{{ $post->id }}">
-                                <img src="/storage/{{ $post->image }}" class="img-fluid pb-4" />
-                            </a>
+                            <div class="">
+                                <a href="/posts/{{ $post->id }}">
+                                    <img src="/storage/{{ $post->image }}" class="img-fluid pb-4" />
+                                    {{ $post->caption }}
+                                </a>
+                            </div>
 
                         @endforeach
                     </div>
